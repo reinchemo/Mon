@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mon's Braids | Luxury Home Braiding in Nairobi, Ruiru</title>
+    <meta name="description" content="Luxury custom braids at your doorstep. Box braids, knotless, cornrows, goddess braids and more. Home service in Nairobi, Ruiru.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --ink: #1a0b4a;
+            --deep: #120733;
+            --violet: #2b1273;
+            --plum: #4a2aa8;
+            --gold: #e3b95a;
+            --gold2: #f6e0a1;
+            --gold3: #a87c26;
+            --text: #f3eefc;
+            --mute: #bdb2e0;
+            --goldgrad: linear-gradient(120deg, #a87c26, #f6e0a1 45%, #e3b95a 60%, #a87c26)
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px
+        }
+        
+        body {
+            font-family: 'Outfit', system-ui, sans-serif;
+            background: var(--deep);
+            color: var(--text);
+            line-height: 1.65;
+            overflow-x: hidden
+        }
+        
+        h1,
+        h2,
+        h3,
+        .serif {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.1
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+        
+        img {
+            max-width: 100%;
+            display: block
+        }
+        
+        .gold {
+            background: var(--goldgrad);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shine 6s linear infinite
+        }
+        
+        @keyframes shine {
+            to {
+                background-position: 200% center
+            }
+        }
+        
+        .wrap {
+            width: min(1180px, 92%);
+            margin: auto
+        }
+        
+        section {
+            padding: 110px 0;
+            position: relative
+        }
+        
+        .sec-head {
+            text-align: center;
+            margin-bottom: 56px
+        }
+        
+        .sec-head h2 {
+            font-size: clamp(2.2rem, 5vw, 3.6rem)
+        }
+        
+        .sec-head p {
+            color: var(--mute);
+            max-width: 540px;
+            margin: 14px auto 0
+        }
+        
+        .orn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 18px;
+            color: var(--gold)
+        }
+        
+        .orn:before,
+        .orn:after {
+            content: "";
+            height: 1px;
+            width: 70px;
+            background: linear-gradient(90deg, transparent, var(--gold))
+        }
+        
+        .orn:after {
+            transform: scaleX(-1)
+        }
+        /* loader */
+        
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: var(--deep);
+            display: grid;
+            place-items: center;
+            transition: opacity .8s, visibility .8s
+        }
+        
+        #loader.done {
+            opacity: 0;
+            visibility: hidden
+        }
+        
+        #loader div {
+            text-align: center
+        }
+        
+        #loader b {
+            font-family: 'Cormorant Garamond';
+            font-size: 3rem;
+            display: block;
+            letter-spacing: .06em;
+            animation: pulse 1.4s infinite
+        }
+        
+        #loader i {
+            display: block;
+            height: 2px;
+            width: 160px;
+            margin: 14px auto 0;
+            background: var(--goldgrad);
+            transform-origin: left;
+            animation: load 1.4s ease forwards
+        }
+        
+        @keyframes load {
+            from {
+                transform: scaleX(0)
+            }
+            to {
+                transform: scaleX(1)
+            }
+        }
+        
+        @keyframes pulse {
+            50% {
+                opacity: .5
+            }
+        }
+        /* nav */
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            padding: 18px 0;
+            transition: .4s
+        }
+        
+        nav.scrolled {
+            background: rgba(18, 7, 51, .82);
+            backdrop-filter: blur(16px);
+            padding: 10px 0;
+            box-shadow: 0 8px 30px #0006
+        }
+        
+        nav .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond';
+            font-size: 1.7rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+        
+        .menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center
+        }
+        
+        .menu a {
+            font-size: .92rem;
+            color: var(--mute);
+            position: relative;
+            transition: .3s
+        }
+        
+        .menu a:not(.btn):after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            height: 1px;
+            width: 0;
+            background: var(--gold);
+            transition: .35s
+        }
+        
+        .menu a:hover {
+            color: var(--gold2)
+        }
+        
+        .menu a:hover:after {
+            width: 100%
+        }
+        
+        .burger {
+            display: none;
+            background: none;
+            border: 0;
+            width: 34px;
+            height: 26px;
+            position: relative;
+            cursor: pointer;
+            z-index: 60
+        }
+        
+        .burger span {
+            position: absolute;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background: var(--gold);
+            transition: .4s
+        }
+        
+        .burger span:nth-child(1) {
+            top: 4px
+        }
+        
+        .burger span:nth-child(2) {
+            top: 12px
+        }
+        
+        .burger span:nth-child(3) {
+            top: 20px
+        }
+        
+        .burger.open span:nth-child(1) {
+            top: 12px;
+            transform: rotate(45deg)
+        }
+        
+        .burger.open span:nth-child(2) {
+            opacity: 0
+        }
+        
+        .burger.open span:nth-child(3) {
+            top: 12px;
+            transform: rotate(-45deg)
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: .4s;
+            font-family: inherit;
+            font-size: .95rem
+        }
+        
+        .btn.fill {
+            background: var(--goldgrad);
+            background-size: 200%;
+            color: #2a1650;
+            border: 0;
+            box-shadow: 0 10px 30px #e3b95a33
+        }
+        
+        .btn.fill:hover {
+            background-position: 100% 0;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px #e3b95a55
+        }
+        
+        .btn.line {
+            color: var(--gold2);
+            background: transparent
+        }
+        
+        .btn.line:hover {
+            background: var(--gold);
+            color: #2a1650;
+            transform: translateY(-3px)
+        }
+        
+        .btn:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(100deg, transparent, #fff6, transparent);
+            transform: skewX(-20deg)
+        }
+        
+        .btn:hover:after {
+            left: 140%;
+            transition: .8s
+        }
+        /* hero */
+        
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 130px 0 80px;
+            background: radial-gradient(circle at 80% 30%, #4a2aa8aa, transparent 55%), radial-gradient(circle at 10% 90%, #2b127388, transparent 50%), var(--ink);
+            overflow: hidden
+        }
+        
+        #sparks {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none
+        }
+        
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            z-index: 2
+        }
+        
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border: 1px solid #e3b95a66;
+            border-radius: 40px;
+            font-size: .85rem;
+            color: var(--gold2);
+            background: #ffffff0a;
+            margin-bottom: 22px
+        }
+        
+        .tag:before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 0 0 var(--gold);
+            animation: ping 2s infinite
+        }
+        
+        @keyframes ping {
+            70% {
+                box-shadow: 0 0 0 10px #e3b95a00
+            }
+        }
+        
+        .hero h1 {
+            font-size: clamp(3rem, 7.4vw, 6rem);
+            margin-bottom: 12px
+        }
+        
+        .hero h1 .ln {
+            display: block;
+            overflow: hidden
+        }
+        
+        .hero h1 .ln span {
+            display: inline-block;
+            transform: translateY(110%);
+            animation: rise 1s cubic-bezier(.2, .8, .2, 1) forwards
+        }
+        
+        .hero h1 .ln:nth-child(2) span {
+            animation-delay: .15s
+        }
+        
+        .hero h1 .ln:nth-child(3) span {
+            animation-delay: .3s
+        }
+        
+        @keyframes rise {
+            to {
+                transform: none
+            }
+        }
+        
+        .hero .sub {
+            font-family: 'Cormorant Garamond';
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--gold2);
+            letter-spacing: .04em;
+            margin-bottom: 18px
+        }
+        
+        .hero p.d {
+            color: var(--mute);
+            max-width: 480px;
+            margin-bottom: 34px
+        }
+        
+        .hero .cta {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap
+        }
+        
+        .stats {
+            display: flex;
+            gap: 34px;
+            margin-top: 46px;
+            flex-wrap: wrap
+        }
+        
+        .stats b {
+            font-family: 'Cormorant Garamond';
+            font-size: 2.4rem;
+            display: block;
+            line-height: 1
+        }
+        
+        .stats span {
+            font-size: .82rem;
+            color: var(--mute)
+        }
+        
+        .portrait {
+            position: relative;
+            justify-self: center;
+            width: min(430px, 86vw);
+            aspect-ratio: 3/4
+        }
+        
+        .portrait .arch {
+            position: absolute;
+            inset: 0;
+            border-radius: 220px 220px 26px 26px;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+            box-shadow: 0 30px 80px #0009, 0 0 60px #e3b95a22;
+            background: linear-gradient(160deg, #4a2aa8, #1a0b4a);
+            z-index: 2
+        }
+        
+        .portrait .arch img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+        
+        .portrait .ph {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 30px;
+            color: var(--gold2);
+            font-size: .95rem;
+            gap: 6px;
+            align-content: center
+        }
+        
+        .portrait .ph svg {
+            margin: auto;
+            opacity: .8
+        }
+        
+        .portrait:before {
+            content: "";
+            position: absolute;
+            inset: -18px;
+            border: 1px solid #e3b95a55;
+            border-radius: 240px 240px 40px 40px;
+            z-index: 1;
+            animation: float 6s ease-in-out infinite
+        }
+        
+        .portrait .ring {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--goldgrad);
+            right: -40px;
+            bottom: 60px;
+            opacity: .9;
+            z-index: 1;
+            filter: blur(1px);
+            animation: float 7s ease-in-out infinite reverse
+        }
+        
+        .badge {
+            position: absolute;
+            z-index: 3;
+            background: #120733dd;
+            backdrop-filter: blur(10px);
+            border: 1px solid #e3b95a66;
+            border-radius: 16px;
+            padding: 12px 16px;
+            font-size: .82rem;
+            animation: float 5s ease-in-out infinite;
+            box-shadow: 0 12px 30px #0006
+        }
+        
+        .badge b {
+            display: block;
+            color: var(--gold2);
+            font-size: .95rem
+        }
+        
+        .b1 {
+            left: -28px;
+            top: 18%
+        }
+        
+        .b2 {
+            right: -18px;
+            bottom: 10%;
+            animation-delay: 1.5s
+        }
+        
+        @keyframes float {
+            50% {
+                transform: translateY(-14px)
+            }
+        }
+        /* marquee */
+        
+        .marquee {
+            background: var(--goldgrad);
+            color: #2a1650;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 16px 0;
+            transform: rotate(-1.2deg);
+            margin: -30px -2% 0;
+            position: relative;
+            z-index: 5;
+            box-shadow: 0 10px 40px #0007
+        }
+        
+        .marquee div {
+            display: inline-block;
+            animation: slide 28s linear infinite;
+            font-family: 'Cormorant Garamond';
+            font-size: 1.5rem;
+            font-weight: 700
+        }
+        
+        .marquee span {
+            margin: 0 26px
+        }
+        
+        @keyframes slide {
+            to {
+                transform: translateX(-50%)
+            }
+        }
+        /* services */
+        
+        #services {
+            background: var(--deep)
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px
+        }
+        
+        .card {
+            padding: 34px 28px;
+            border-radius: 24px;
+            background: linear-gradient(160deg, #ffffff10, #ffffff04);
+            border: 1px solid #e3b95a2e;
+            position: relative;
+            overflow: hidden;
+            transition: transform .4s, border-color .4s;
+            transform-style: preserve-3d
+        }
+        
+        .card:before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(#e3b95a44, transparent 70%);
+            top: var(--y, -100px);
+            left: var(--x, -100px);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity .3s;
+            pointer-events: none
+        }
+        
+        .card:hover:before {
+            opacity: 1
+        }
+        
+        .card:hover {
+            border-color: var(--gold)
+        }
+        
+        .card .ic {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            font-size: 1.5rem;
+            background: var(--goldgrad);
+            color: #2a1650;
+            margin-bottom: 20px;
+            transition: .5s
+        }
+        
+        .card:hover .ic {
+            transform: rotate(-10deg) scale(1.12)
+        }
+        
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px
+        }
+        
+        .card p {
+            color: var(--mute);
+            font-size: .93rem
+        }
+        /* about */
+        
+        #about {
+            background: linear-gradient(180deg, var(--deep), var(--ink))
+        }
+        
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center
+        }
+        
+        .collage {
+            position: relative;
+            aspect-ratio: 1;
+            max-width: 480px;
+            margin: auto;
+            width: 100%
+        }
+        
+        .collage .c {
+            position: absolute;
+            border-radius: 26px;
+            border: 2px solid var(--gold);
+            overflow: hidden;
+            box-shadow: 0 20px 50px #0008;
+            background: linear-gradient(135deg, #4a2aa8, #2b1273);
+            display: grid;
+            place-items: center;
+            font-size: 3rem
+        }
+        
+        .collage .c img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+        
+        .c1 {
+            inset: 0 22% 22% 0
+        }
+        
+        .c2 {
+            inset: 30% 0 0 34%;
+            border-radius: 200px 200px 26px 26px!important
+        }
+        
+        .about h2 {
+            font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+            margin-bottom: 18px
+        }
+        
+        .about p {
+            color: var(--mute);
+            margin-bottom: 16px
+        }
+        
+        .ticks {
+            list-style: none;
+            margin: 22px 0 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px
+        }
+        
+        .ticks li:before {
+            content: "✦";
+            color: var(--gold);
+            margin-right: 10px
+        }
+        /* ===== About collage – photo + quote mix ===== */
+        
+        .collage .rate {
+            position: absolute;
+            top: -14px;
+            right: -18px;
+            z-index: 4;
+            background: #120733ee;
+            backdrop-filter: blur(10px);
+            border: 1px solid #e3b95a88;
+            border-radius: 16px;
+            padding: 12px 16px;
+            text-align: center;
+            box-shadow: 0 14px 34px #0009, 0 0 30px #e3b95a33;
+            animation: float 5s ease-in-out infinite;
+            min-width: 130px;
+        }
+        
+        .collage .rate .stars {
+            display: block;
+            color: var(--gold);
+            font-size: .95rem;
+            letter-spacing: 2px;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        
+        .collage .rate b {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            color: var(--gold2);
+            display: block;
+            line-height: 1;
+        }
+        
+        .collage .rate small {
+            color: var(--mute);
+            font-size: .72rem;
+            letter-spacing: .03em;
+        }
+        
+        .collage .quote {
+            position: absolute;
+            bottom: -22px;
+            left: -28px;
+            z-index: 4;
+            width: min(290px, 78%);
+            background: linear-gradient(160deg, #1a0b4af2, #120733f7);
+            backdrop-filter: blur(12px);
+            border: 1px solid #e3b95a66;
+            border-radius: 20px;
+            padding: 20px 22px 18px;
+            box-shadow: 0 22px 50px #000a, 0 0 40px #e3b95a22;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+        
+        .collage .quote .qmark {
+            position: absolute;
+            top: -14px;
+            left: 18px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--goldgrad);
+            color: #2a1650;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 700;
+            display: grid;
+            place-items: center;
+            line-height: 0;
+            padding-top: 14px;
+            box-shadow: 0 8px 20px #e3b95a55;
+        }
+        
+        .collage .quote p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.02rem;
+            line-height: 1.45;
+            color: var(--text);
+            margin: 6px 0 14px;
+        }
+        
+        .collage .quote .who {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .collage .quote .who .dot {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: var(--goldgrad);
+            color: #2a1650;
+            font-weight: 700;
+            display: grid;
+            place-items: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            flex: none;
+        }
+        
+        .collage .quote .who b {
+            display: block;
+            color: var(--gold2);
+            font-size: .92rem;
+            font-weight: 500;
+        }
+        
+        .collage .quote .who small {
+            color: var(--mute);
+            font-size: .74rem;
+        }
+        /* gallery */
+        
+        .filters {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 36px
+        }
+        
+        .filters button {
+            background: none;
+            border: 1px solid #e3b95a55;
+            color: var(--mute);
+            padding: 9px 22px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: .3s
+        }
+        
+        .filters button.on,
+        .filters button:hover {
+            background: var(--gold);
+            color: #2a1650;
+            border-color: var(--gold)
+        }
+        
+        .masonry {
+            columns: 4 220px;
+            column-gap: 18px
+        }
+        
+        .g {
+            break-inside: avoid;
+            margin-bottom: 18px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid #e3b95a33;
+            background: linear-gradient(160deg, #4a2aa8, #1a0b4a);
+            transition: transform .5s, opacity .5s;
+            display: block
+        }
+        
+        .g.hide {
+            display: none
+        }
+        
+        .g img,
+        .g .pl {
+            width: 100%;
+            transition: transform .8s
+        }
+        
+        .g .pl {
+            display: grid;
+            place-items: center;
+            color: var(--gold2);
+            font-size: 2.2rem
+        }
+        
+        .g:hover img,
+        .g:hover .pl {
+            transform: scale(1.1)
+        }
+        
+        .g .cap {
+            position: absolute;
+            inset: auto 0 0;
+            padding: 40px 16px 14px;
+            background: linear-gradient(transparent, #120733f0);
+            font-size: .9rem;
+            transform: translateY(100%);
+            transition: .4s;
+            color: var(--gold2)
+        }
+        
+        .g:hover .cap {
+            transform: none
+        }
+        /* videos */
+        
+        #videos {
+            background: var(--ink)
+        }
+        
+        .vgrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px
+        }
+        
+        .v {
+            aspect-ratio: 9/14;
+            border-radius: 26px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid #e3b95a44;
+            background: linear-gradient(160deg, #4a2aa8, #120733);
+            transition: .5s
+        }
+        
+        .v:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px #000a, 0 0 40px #e3b95a22
+        }
+        
+        .v video,
+        .v img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+        
+        .play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 74px;
+            height: 74px;
+            margin: -37px;
+            border-radius: 50%;
+            background: var(--goldgrad);
+            display: grid;
+            place-items: center;
+            color: #2a1650;
+            font-size: 1.5rem;
+            padding-left: 5px;
+            z-index: 2
+        }
+        
+        .play:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            animation: wave 2s infinite
+        }
+        
+        @keyframes wave {
+            to {
+                transform: scale(1.8);
+                opacity: 0
+            }
+        }
+        
+        .v .cap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 50px 20px 18px;
+            background: linear-gradient(transparent, #120733ee);
+            z-index: 1
+        }
+        
+        .v .cap b {
+            font-family: 'Cormorant Garamond';
+            font-size: 1.3rem;
+            display: block
+        }
+        
+        .v .cap span {
+            font-size: .82rem;
+            color: var(--mute)
+        }
+        /* process */
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            counter-reset: s
+        }
+        
+        .step {
+            text-align: center;
+            padding: 10px;
+            counter-increment: s
+        }
+        
+        .step:before {
+            content: counter(s);
+            display: grid;
+            place-items: center;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+            font-family: 'Cormorant Garamond';
+            font-size: 1.8rem;
+            color: var(--gold2);
+            transition: .4s
+        }
+        
+        .step:hover:before {
+            background: var(--gold);
+            color: #2a1650;
+            transform: scale(1.12)
+        }
+        
+        .step p {
+            color: var(--mute);
+            font-size: .92rem
+        }
+        /* contact */
+        
+        #contact {
+            background: linear-gradient(180deg, var(--ink), var(--deep))
+        }
+        
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px
+        }
+        
+        .info {
+            display: grid;
+            gap: 18px;
+            align-content: start
+        }
+        
+        .ci {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            padding: 22px;
+            border-radius: 22px;
+            border: 1px solid #e3b95a33;
+            background: #ffffff08;
+            transition: .4s
+        }
+        
+        .ci:hover {
+            transform: translateX(8px);
+            border-color: var(--gold)
+        }
+        
+        .ci i {
+            font-style: normal;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--goldgrad);
+            display: grid;
+            place-items: center;
+            font-size: 1.3rem;
+            flex: none
+        }
+        
+        .ci small {
+            color: var(--mute);
+            display: block
+        }
+        
+        .ci b {
+            font-weight: 500;
+            font-size: 1.1rem
+        }
+        
+        form {
+            padding: 34px;
+            border-radius: 28px;
+            border: 1px solid #e3b95a44;
+            background: linear-gradient(160deg, #ffffff12, #ffffff04);
+            display: grid;
+            gap: 16px
+        }
+        
+        form h3 {
+            font-size: 1.9rem
+        }
+        
+        .f {
+            position: relative
+        }
+        
+        .f input,
+        .f select,
+        .f textarea {
+            width: 100%;
+            padding: 16px 18px;
+            border-radius: 14px;
+            border: 1px solid #e3b95a44;
+            background: #120733aa;
+            color: var(--text);
+            font: inherit;
+            outline: 0;
+            transition: .3s
+        }
+        
+        .f input:focus,
+        .f select:focus,
+        .f textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px #e3b95a22
+        }
+        
+        .f select option {
+            background: var(--deep)
+        }
+        
+        .map {
+            margin-top: 18px;
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid #e3b95a44;
+            height: 220px;
+            position: relative
+        }
+        
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: hue-rotate(220deg) saturate(.7) brightness(.8)
+        }
+        
+        footer {
+            padding: 40px 0 100px;
+            text-align: center;
+            border-top: 1px solid #e3b95a22;
+            color: var(--mute);
+            font-size: .88rem
+        }
+        
+        footer .serif {
+            font-size: 1.4rem;
+            color: var(--gold2);
+            margin-bottom: 6px
+        }
+        
+        .wa {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 40;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25d366;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 10px 30px #0008;
+            font-size: 1.7rem;
+            animation: float 3s ease-in-out infinite
+        }
+        /* lightbox */
+        
+        #lb {
+            position: fixed;
+            inset: 0;
+            background: #0a0420ee;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: .4s;
+            padding: 20px
+        }
+        
+        #lb.on {
+            opacity: 1;
+            visibility: visible
+        }
+        
+        #lb .box {
+            max-width: min(92vw, 760px);
+            max-height: 86vh;
+            transform: scale(.85);
+            transition: .5s cubic-bezier(.2, .8, .2, 1);
+            text-align: center
+        }
+        
+        #lb.on .box {
+            transform: none
+        }
+        
+        #lb img,
+        #lb video {
+            max-height: 80vh;
+            max-width: 100%;
+            border-radius: 20px;
+            border: 2px solid var(--gold);
+            margin: auto
+        }
+        
+        #lb .ph {
+            width: min(80vw, 420px);
+            aspect-ratio: 3/4;
+            border-radius: 20px;
+            border: 2px solid var(--gold);
+            display: grid;
+            place-items: center;
+            font-size: 4rem;
+            background: linear-gradient(160deg, #4a2aa8, #1a0b4a);
+            margin: auto
+        }
+        
+        #lb button {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            background: none;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            cursor: pointer
+        }
+        /* reveal */
+        
+        .rv {
+            opacity: 0;
+            transform: translateY(50px) scale(.97);
+            filter: blur(6px);
+            transition: opacity .9s, transform .9s cubic-bezier(.2, .8, .2, 1), filter .9s;
+            transition-delay: var(--d, 0s)
+        }
+        
+        .rv.l {
+            transform: translateX(-60px)
+        }
+        
+        .rv.r {
+            transform: translateX(60px)
+        }
+        
+        .rv.in {
+            opacity: 1;
+            transform: none;
+            filter: none
+        }
+        
+        .glow {
+            position: fixed;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: radial-gradient(#e3b95a1f, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            left: -400px;
+            top: -400px
+        }
+        
+        @media(max-width:900px) {
+            section {
+                padding: 80px 0
+            }
+            .hero,
+            .about,
+            .contact {
+                grid-template-columns: 1fr
+            }
+            .hero {
+                text-align: center
+            }
+            .hero .cta,
+            .stats {
+                justify-content: center
+            }
+            .hero p.d {
+                margin-inline: auto
+            }
+            .portrait {
+                order: -1;
+                margin-bottom: 20px;
+                width: min(300px, 76vw)
+            }
+            .b1 {
+                left: -14px
+            }
+            .b2 {
+                right: -10px
+            }
+            .burger {
+                display: block
+            }
+            .menu {
+                position: fixed;
+                inset: 0;
+                background: var(--deep);
+                flex-direction: column;
+                justify-content: center;
+                gap: 28px;
+                clip-path: circle(0 at 92% 5%);
+                transition: clip-path .8s cubic-bezier(.7, 0, .2, 1);
+                z-index: 55
+            }
+            .menu.open {
+                clip-path: circle(150% at 92% 5%)
+            }
+            .menu a {
+                font-size: 1.5rem;
+                font-family: 'Cormorant Garamond'
+            }
+            .glow {
+                display: none
+            }
+            /* Mobile tweaks for the new about collage */
+            .collage {
+                margin-bottom: 90px;
+            }
+            .collage .rate {
+                right: 0;
+                top: -12px;
+                transform: scale(.92);
+            }
+            .collage .quote {
+                left: 0;
+                bottom: -70px;
+                width: 100%;
+            }
+            .collage .quote p {
+                font-size: .95rem;
+            }
+        }
+        
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                animation: none!important;
+                transition: none!important
+            }
+            .rv {
+                opacity: 1;
+                transform: none;
+                filter: none
+            }
+            .hero h1 .ln span {
+                transform: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loader">
+        <div><b class="gold">Mon's Braids</b><i></i></div>
+    </div>
+    <div class="glow" id="glow"></div>
+
+    <nav id="nav">
+        <div class="wrap">
+            <a href="#home" class="logo"><span class="gold">✿</span> Mon's Braids</a>
+            <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul class="menu" id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#contact" class="btn fill">Book now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home"><canvas id="sparks"></canvas>
+        <div class="wrap hero">
+            <div>
+                <span class="tag">Home service across Nairobi, Ruiru</span>
+                <h1 class="serif"><span class="ln"><span>Elevating</span></span><span class="ln"><span class="gold">your crown</span></span><span class="ln"><span>&amp; defining your royalty</span></span>
+                </h1>
+                <div class="sub">Luxury custom styles, designed for you</div>
+                <p class="d">Mon's Braids brings salon-quality braiding to your doorstep. Relax at home while your hair is neatly done at an affordable price.</p>
+                <div class="cta"><a href="#contact" class="btn fill">Book your style</a><a href="#gallery" class="btn line">See my work</a></div>
+                <div class="stats">
+                    <div><b class="gold" data-n="100" data-s="+">0</b><span>Happy clients</span></div>
+                    <div><b class="gold" data-n="8">0</b><span>Signature styles</span></div>
+                    <div><b class="gold" data-n="100" data-s="%">0</b><span>Home service</span></div>
+                </div>
+            </div>
+            <div class="portrait">
+                <div class="ring"></div>
+                <div class="arch">
+                    <!-- ===== PUT HER PHOTO HERE ===== -->
+                    <img src="images/mon4.jpg" alt="Mon - Braider" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+                    <div class="ph" style="display:none;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>
+                        <b>Add her photo:</b>
+                        <span>images/mon.jpg</span>
+                    </div>
+                </div>
+                <div class="badge b1"><b>Knotless &amp; Box</b>Neat, light, lasting</div>
+                <div class="badge b2"><b>I come to you</b>Home to home</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="marquee">
+        <div id="mq"></div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="wrap">
+            <div class="sec-head rv">
+                <h2>My <span class="gold">services</span></h2>
+                <div class="orn">✦</div>
+                <p>Every style is made to suit your face, your lifestyle and your taste.</p>
+            </div>
+            <div class="grid" id="sgrid"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="wrap about">
+            <div class="collage rv l">
+                <!-- Big square photo (Mon or a signature style) -->
+                <div class="c c1">
+                    <img src="images/Box braids.jpg" alt="Mon's braiding work" onerror="this.style.display='none';this.parentElement.innerHTML='👑'">
+                </div>
+
+                <!-- Arch photo (a hero-style braid) -->
+                <div class="c c2">
+                    <img src="images/Goddess Braids.jpg" alt="Goddess braids" onerror="this.style.display='none';this.parentElement.innerHTML='✿'">
+                </div>
+
+                <!-- Floating gold rating badge -->
+                <div class="rate">
+                    <span class="stars">★★★★★</span>
+                    <b>5.0</b>
+                    <small>100+ happy clients</small>
+                </div>
+
+                <!-- Floating testimonial card -->
+                <div class="quote">
+                    <span class="qmark">”</span>
+                    <p>Mon came to my house in Ruiru — so gentle, and my knotless lasted 6 weeks. Truly a crown artist!</p>
+                    <div class="who">
+                        <span class="dot">W</span>
+                        <div>
+                            <b>Wanjiru K.</b>
+                            <small>Knotless braids · Ruiru</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rv r">
+                <h2>Meet <span class="gold">Mon</span>, your braider who comes to you</h2>
+                <p>Mon's Braids is a home-to-home braiding service built around comfort and confidence. No queues, no travel. I bring my tools and my skill to your home and treat every head like a crown.</p>
+                <p>From classic cornrows to goddess braids and wig revamps, every set is carefully parted, neatly braided and finished to last.</p>
+                <ul class="ticks">
+                    <li>Home service</li>
+                    <li>Affordable prices</li>
+                    <li>Custom styles</li>
+                    <li>Neat, clean parts</li>
+                </ul>
+                <a href="#contact" class="btn fill">Book an appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="wrap">
+            <div class="sec-head rv">
+                <h2>My <span class="gold">happy clients</span></h2>
+                <div class="orn">✦</div>
+                <p>A few of the crowns I have created so far.</p>
+            </div>
+            <div class="filters rv" id="filters"></div>
+            <div class="masonry" id="masonry"></div>
+        </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos">
+        <div class="wrap">
+            <div class="sec-head rv">
+                <h2>Watch the <span class="gold">transformation</span></h2>
+                <div class="orn">✦</div>
+                <p>See the braiding come to life, from start to finish.</p>
+            </div>
+            <div class="vgrid" id="vgrid"></div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section>
+        <div class="wrap">
+            <div class="sec-head rv">
+                <h2>How <span class="gold">booking</span> works</h2>
+                <div class="orn">✦</div>
+            </div>
+            <div class="steps">
+                <div class="step rv" style="--d:.0s">
+                    <h3>Call or WhatsApp</h3>
+                    <p>Tell me the style you want and where you are.</p>
+                </div>
+                <div class="step rv" style="--d:.15s">
+                    <h3>Pick a date</h3>
+                    <p>Choose a time that works for you.</p>
+                </div>
+                <div class="step rv" style="--d:.3s">
+                    <h3>I come to you</h3>
+                    <p>Mon arrives with everything needed.</p>
+                </div>
+                <div class="step rv" style="--d:.45s">
+                    <h3>Wear your crown</h3>
+                    <p>Leave feeling like royalty.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="wrap">
+            <div class="sec-head rv">
+                <h2>Book your <span class="gold">appointment</span></h2>
+                <div class="orn">✦</div>
+                <p>Message me and I will confirm your slot quickly.</p>
+            </div>
+            <div class="contact">
+                <div class="info rv l">
+                    <a class="ci" href="tel:+254780709191"><i>📞</i><div><small>Call me</small><b>0780 709 191</b></div></a>
+                    <a class="ci" href="https://wa.me/254780709191" target="_blank" rel="noopener"><i>💬</i><div><small>WhatsApp</small><b>Chat with Mon</b></div></a>
+                    <div class="ci"><i>📍</i>
+                        <div><small>Location</small><b>Nairobi, Ruiru</b></div>
+                    </div>
+                    <div class="ci"><i>🏠</i>
+                        <div><small>Service</small><b>Home to home, I come to you</b></div>
+                    </div>
+                    <div class="map"><iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=Ruiru,Kenya&output=embed"></iframe></div>
+                </div>
+                <form id="bf" class="rv r">
+                    <h3>Request a booking</h3>
+                    <div class="f"><input id="nm" placeholder="Your name" required></div>
+                    <div class="f"><select id="st"></select></div>
+                    <div class="f"><input id="lc" placeholder="Your location (estate / area)" required></div>
+                    <div class="f"><textarea id="ms" rows="3" placeholder="Preferred date and any notes"></textarea></div>
+                    <button class="btn fill" type="submit">Send on WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="serif gold">Mon's Braids</div>Elevating your crown and defining your royalty<br>© <span id="yr"></span> Mon's Braids. Nairobi, Ruiru.</footer>
+    <a class="wa" href="https://wa.me/254780709191" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+    <div id="lb"><button aria-label="Close">×</button>
+        <div class="box" id="lbbox"></div>
+    </div>
+
+    <script>
+        /* ===== EDIT YOUR CONTENT HERE ===== */
+        const PHONE = "254780709191";
+
+        /* SERVICES */
+        const SERVICES = [
+            ["Box Braids", "Classic, neat, protective squares in any length.", "▦"],
+            ["Knotless Braids", "Lightweight, gentle on your edges and scalp.", "✧"],
+            ["Cornrows", "Clean straight-back or custom designs.", "≋"],
+            ["Stitch Braids", "Sharp, defined lines with a polished finish.", "❖"],
+            ["Tribal Braids", "Bold, cultural patterns with a statement look.", "◈"],
+            ["Goddess Braids", "Elegant boho curls for a soft, regal look.", "♛"],
+            ["Feed-In Braids", "Natural, seamless, tapered for a flawless finish.", "✦"],
+            ["Wig Revamp", "Give your wig a fresh, new life.", "✿"]
+        ];
+
+        /* =============================================
+           GALLERY - YOUR IMAGES (inside the "images" folder)
+           ============================================= */
+        const GALLERY = [
+            // --- Box Braids ---
+            {
+                src: "images/Box braids.jpg",
+                cat: "Box Braids",
+                t: "Box braids"
+            },
+
+            // --- Goddess ---
+            {
+                src: "images/Goddess Braids.jpg",
+                cat: "Goddess",
+                t: "Goddess braids"
+            },
+
+            // --- Knotless ---
+            {
+                src: "images/Knotless Braids.jpg",
+                cat: "Knotless",
+                t: "Knotless braids"
+            }, {
+                src: "images/knot.jpg",
+                cat: "Knotless",
+                t: "Knotless style 1"
+            }, {
+                src: "images/knot2.jpg",
+                cat: "Knotless",
+                t: "Knotless style 2"
+            }, {
+                src: "images/knot3.jpg",
+                cat: "Knotless",
+                t: "Knotless style 3"
+            },
+
+            // --- Cornrows / Stitchless ---
+            {
+                src: "images/stitchless.jpg",
+                cat: "Cornrows",
+                t: "Stitchless cornrows"
+            }, {
+                src: "images/cornrows2.jpg",
+                cat: "Cornrows",
+                t: "Cornrows design"
+            },
+
+            // --- Twists ---
+            {
+                src: "images/Natural Twist.jpg",
+                cat: "Twists",
+                t: "Natural twist"
+            }, {
+                src: "images/twist.jpg",
+                cat: "Twists",
+                t: "Twist style 1"
+            }, {
+                src: "images/twist2.jpg",
+                cat: "Twists",
+                t: "Twist style 2"
+            }, {
+                src: "images/twist3.jpg",
+                cat: "Twists",
+                t: "Twist style 3"
+            },
+
+            // --- Tribal ---
+            {
+                src: "images/Tribal Braids.jpg",
+                cat: "Tribal",
+                t: "Tribal braids"
+            }
+        ];
+
+        /* =============================================
+           VIDEOS - ADD YOUR VIDEO FILES FROM YOUR FOLDER
+           =============================================
+           Put your video files in the "videos" folder.
+           Then add entries below like this:
+           
+           { src: "videos/your-video.mp4", poster: "images/poster.jpg", t: "Title", s: "Subtitle" }
+        */
+        const VIDEOS = [{
+            src: "videos/1.mp4",
+            poster: "videos/vid1.jpg",
+            t: "Knotless transformation",
+            s: "Start to finish"
+        }, {
+            src: "",
+            poster: "",
+            t: "Goddess braids",
+            s: "Client reveal"
+        }, {
+            src: "",
+            poster: "",
+            t: "Cornrows design",
+            s: "Time-lapse"
+        }, {
+            src: "",
+            poster: "",
+            t: "Box braids at home",
+            s: "Home service"
+        }];
+        /* ============================================= */
+
+        const $ = s => document.querySelector(s),
+            H = [3 / 4, 1, 4 / 5, 5 / 6];
+        $("#yr").textContent = new Date().getFullYear();
+        addEventListener("load", () => setTimeout(() => $("#loader").classList.add("done"), 1300));
+        $("#mq").innerHTML = [...SERVICES, ...SERVICES].map(s => `<span>${s[0]} ✦</span>`).join("") + [...SERVICES, ...SERVICES].map(s => `<span>${s[0]} ✦</span>`).join("");
+        $("#sgrid").innerHTML = SERVICES.map((s, i) => `<div class="card rv" style="--d:${(i%4)*.1}s"><div class="ic">${s[2]}</div><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("");
+        $("#st").innerHTML = '<option value="">Choose a style</option>' + SERVICES.map(s => `<option>${s[0]}</option>`).join("");
+
+        /* nav */
+        const nav = $("#nav"),
+            bg = $("#burger"),
+            mn = $("#menu");
+        addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 40), {
+            passive: true
+        });
+        bg.onclick = () => {
+            bg.classList.toggle("open");
+            mn.classList.toggle("open")
+        };
+        mn.querySelectorAll("a").forEach(a => a.onclick = () => {
+            bg.classList.remove("open");
+            mn.classList.remove("open")
+        });
+
+        /* gallery */
+        const cats = ["All", ...new Set(GALLERY.map(g => g.cat))];
+        $("#filters").innerHTML = cats.map((c, i) => `<button class="${i?"":"on"}" data-c="${c}">${c}</button>`).join("");
+        $("#masonry").innerHTML = GALLERY.map((g, i) => {
+            const imgContent = g.src ?
+                `<img loading="lazy" src="${g.src}" alt="${g.t}" onerror="this.parentElement.innerHTML='<div class=\\'pl\\' style=\\'aspect-ratio:${H[i%4]}\\'>✿</div><div class=\\'cap\\'>${g.t}</div>'; this.parentElement.classList.add('g')">` :
+                `<div class="pl" style="aspect-ratio:${H[i%4]}">✿</div>`;
+            return `<a class="g rv" data-c="${g.cat}" data-i="${i}" style="--d:${(i%4)*.08}s">${imgContent}<div class="cap">${g.t}</div></a>`;
+        }).join("");
+
+        $("#filters").onclick = e => {
+            const b = e.target.closest("button");
+            if (!b) return;
+            document.querySelectorAll("#filters button").forEach(x => x.classList.toggle("on", x == b));
+            document.querySelectorAll(".g").forEach(g => {
+                const show = b.dataset.c == "All" || g.dataset.c == b.dataset.c;
+                g.classList.toggle("hide", !show);
+                if (show) {
+                    g.style.opacity = 0;
+                    requestAnimationFrame(() => requestAnimationFrame(() => g.style.opacity = 1));
+                }
+            });
+        };
+
+        /* videos */
+        $("#vgrid").innerHTML = VIDEOS.map((v, i) => `<div class="v rv" data-i="${i}" style="--d:${i*.1}s">${v.poster?`<img loading="lazy" src="${v.poster}" alt="${v.t}">`:""}<div class="play">▶</div><div class="cap"><b>${v.t}</b><span>${v.s}</span></div></div>`).join("");
+        
+        /* lightbox */
+        const lb = $("#lb"), box = $("#lbbox");
+        const close = () => { lb.classList.remove("on"); box.innerHTML = "" };
+        lb.onclick = e => { if (e.target == lb || e.target.tagName == "BUTTON") close() };
+        addEventListener("keydown", e => e.key == "Escape" && close());
+        document.addEventListener("click", e => {
+            const g = e.target.closest(".g"), v = e.target.closest(".v");
+            if (g) {
+                const d = GALLERY[g.dataset.i];
+                box.innerHTML = d.src ? `<img src="${d.src}" alt="${d.t}">` : `<div class="ph">✿</div>`;
+                lb.classList.add("on");
+            }
+            if (v) {
+                const d = VIDEOS[v.dataset.i];
+                box.innerHTML = d.src ? `<video src="${d.src}" controls autoplay playsinline></video>` : `<div class="ph">▶</div><p style="margin-top:14px;color:var(--mute)">Add your video file in the VIDEOS list</p>`;
+                lb.classList.add("on");
+            }
+        });
+        
+        /* booking form -> WhatsApp */
+        $("#bf").onsubmit = e => {
+            e.preventDefault();
+            const t = `Hello Mon's Braids! I'm ${$("#nm").value}. I'd like to book: ${$("#st").value||"a style"}. Location: ${$("#lc").value}. ${$("#ms").value}`;
+            open(`https://wa.me/${PHONE}?text=${encodeURIComponent(t)}`, "_blank");
+        };
+        
+        /* reveal + counters */
+        const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target) } }), { threshold: .12 });
+        document.querySelectorAll(".rv").forEach(el => io.observe(el));
+        
+        const co = new IntersectionObserver(es => es.forEach(x => {
+            if (!x.isIntersecting) return;
+            const el = x.target, n = +el.dataset.n, s = el.dataset.s || "";
+            let t0;
+            const f = t => {
+                t0 ??= t;
+                const p = Math.min((t - t0) / 1800, 1);
+                el.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))) + s;
+                p < 1 && requestAnimationFrame(f)
+            };
+            requestAnimationFrame(f);
+            co.unobserve(el);
+        }));
+        document.querySelectorAll("[data-n]").forEach(el => co.observe(el));
+        
+        /* card spotlight + cursor glow */
+        document.querySelectorAll(".card").forEach(c => c.addEventListener("mousemove", e => {
+            const r = c.getBoundingClientRect();
+            c.style.setProperty("--x", e.clientX - r.left + "px");
+            c.style.setProperty("--y", e.clientY - r.top + "px");
+            const rx = ((e.clientY - r.top) / r.height - .5) * -8, ry = ((e.clientX - r.left) / r.width - .5) * 8;
+            c.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+        }), c.addEventListener("mouseleave", () => c.style.transform = ""));
+        addEventListener("mousemove", e => { const g = $("#glow"); g.style.left = e.clientX + "px"; g.style.top = e.clientY + "px" });
+        
+        /* gold sparkle particles */
+        const cv = $("#sparks"), cx = cv.getContext("2d");
+        let P = [];
+        const rs = () => {
+            cv.width = cv.offsetWidth;
+            cv.height = cv.offsetHeight;
+            P = Array.from({ length: cv.width < 700 ? 25 : 55 }, () => ({ x: Math.random() * cv.width, y: Math.random() * cv.height, r: Math.random() * 2 + .5, v: Math.random() * .4 + .1, p: Math.random() * 6 }));
+        };
+        rs();
+        addEventListener("resize", rs);
+        (function d() {
+            cx.clearRect(0, 0, cv.width, cv.height);
+            P.forEach(s => {
+                s.y -= s.v;
+                s.p += .03;
+                if (s.y < -5) { s.y = cv.height + 5; s.x = Math.random() * cv.width }
+                cx.globalAlpha = .3 + .6 * Math.abs(Math.sin(s.p));
+                cx.fillStyle = "#f6e0a1";
+                cx.shadowColor = "#e3b95a";
+                cx.shadowBlur = 10;
+                cx.beginPath();
+                cx.arc(s.x, s.y, s.r, 0, 7);
+                cx.fill();
+            });
+            requestAnimationFrame(d);
+        })();
+    </script>
+</body>
+
+</html>
