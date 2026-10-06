@@ -1621,6 +1621,55 @@
                 top: 10px;
                 right: 10px
             }
+            /* === MOBILE PERFORMANCE FIXES === */
+            /* Stop heavy float/pulse animations on phones for smooth scrolling */
+            .card,
+            .portrait .ring,
+            .portrait:before,
+            .badge,
+            .collage .rate,
+            .collage .quote,
+            .wa,
+            .btn.fill,
+            .play,
+            .play:before,
+            .tag:before {
+                animation: none !important;
+            }
+            #services::before {
+                animation: none !important;
+            }
+            /* Disable backdrop-filter blur (expensive on mobile GPUs) */
+            nav.scrolled {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background: rgba(18, 7, 51, .95) !important;
+            }
+            .badge,
+            .collage .rate,
+            .collage .quote,
+            #lb {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+            .badge {
+                background: #120733f0 !important
+            }
+            .collage .rate {
+                background: #120733f0 !important
+            }
+            .collage .quote {
+                background: #1a0b4af5 !important
+            }
+            #lb {
+                background: #0a0420f5 !important
+            }
+            /* Reduce transform work on gallery/video hover */
+            .g:hover img,
+            .g:hover .pl,
+            .v:hover img {
+                transform: none !important;
+            }
         }
         
         @media(prefers-reduced-motion:reduce) {
@@ -1844,14 +1893,14 @@
                         </i>
                         <div><small>WhatsApp</small><b>Chat with Me</b></div>
                     </a>
-                    <!-- ✅ TIKTOK — points to the correct URL -->
+                    <!-- TikTok — points to the correct URL -->
                     <a class="ci" href="https://www.tiktok.com/@vish2020.com?_r=1&_t=ZS-9AKIPv63piv" target="_blank" rel="noopener">
                         <i>
                             <svg viewBox="0 0 24 24" fill="#2a1650" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16.6 5.82a4.28 4.28 0 0 1-2.79-2.32V3.4h-3.02v12.15a2.59 2.59 0 1 1-1.86-2.49V9.98a5.62 5.62 0 1 0 4.88 5.57V9.01a7.3 7.3 0 0 0 4.28 1.38V7.36a4.28 4.28 0 0 1-1.49-1.54z"/>
                             </svg>
                         </i>
-                        <div><small>TikTok</small><b>Click to Follow</b></div>
+                        <div><small>TikTok</small><b>@vish2020.com</b></div>
                     </a>
                     <div class="ci"><i>📍</i>
                         <div><small>Location</small><b>Nairobi, Ruiru</b></div>
@@ -1872,11 +1921,11 @@
             Made by
             <a href="https://wa.me/254759592457?text=Hi%20Reinhard%2C%20I%20saw%20the%20Mon's%20Braids%20website%20and%20I%20would%20like%20a%20site%20too!" target="_blank" rel="noopener">Reinhard</a>
         </div>
-        <!-- ✅ TIKTOK FOOTER — points to the correct URL -->
+        <!-- TikTok footer link — same correct URL -->
         <a class="tiktok-link" href="https://www.tiktok.com/@vish2020.com?_r=1&_t=ZS-9AKIPv63piv" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M16.6 5.82a4.28 4.28 0 0 1-2.79-2.32V3.4h-3.02v12.15a2.59 2.59 0 1 1-1.86-2.49V9.98a5.62 5.62 0 1 0 4.88 5.57V9.01a7.3 7.3 0 0 0 4.28 1.38V7.36a4.28 4.28 0 0 1-1.49-1.54z"/>
-            </svg> Follow on TikTok
+            </svg> Follow on TikTok · @vish2020.com
         </a>
     </footer>
 
@@ -1896,7 +1945,7 @@
     <script>
         /* ===== EDIT YOUR CONTENT HERE ===== */
         const PHONE = "254780709191";
-        /* ✅ TikTok full URL — applied automatically to every TikTok link */
+        /* TikTok full URL — applied automatically to every TikTok link */
         const TIKTOK = "https://www.tiktok.com/@vish2020.com?_r=1&_t=ZS-9AKIPv63piv";
 
         const SERVICES = [
@@ -1990,7 +2039,7 @@
             H = [3 / 4, 1, 4 / 5, 5 / 6];
         $("#yr").textContent = new Date().getFullYear();
 
-        /* ✅ This applies the TikTok URL to every TikTok link on the page */
+        /* Applies the TikTok URL to every TikTok link on the page */
         document.querySelectorAll('a[href*="tiktok.com"]').forEach(a => {
             a.href = TIKTOK;
         });
@@ -2145,7 +2194,8 @@
         const rs = () => {
             cv.width = cv.offsetWidth;
             cv.height = cv.offsetHeight;
-            P = Array.from({ length: cv.width < 700 ? 25 : 55 }, () => ({ x: Math.random() * cv.width, y: Math.random() * cv.height, r: Math.random() * 2 + .5, v: Math.random() * .4 + .1, p: Math.random() * 6 }));
+            /* Reduced particle count on small screens for performance */
+            P = Array.from({ length: cv.width < 700 ? 10 : 55 }, () => ({ x: Math.random() * cv.width, y: Math.random() * cv.height, r: Math.random() * 2 + .5, v: Math.random() * .4 + .1, p: Math.random() * 6 }));
         };
         rs();
         addEventListener("resize", rs);
